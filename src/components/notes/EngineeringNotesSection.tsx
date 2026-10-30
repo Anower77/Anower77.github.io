@@ -32,7 +32,7 @@ export function EngineeringNotesSection() {
 
         {/* Featured Note Banner */}
         {featured && (
-          <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-surface-subtle to-[#151722] border border-accent/30 relative overflow-hidden group">
+          <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-surface-subtle to-surface dark:to-[#151722] border border-accent/30 relative overflow-hidden group shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-2">
                 <Badge variant="accent" className="font-mono text-[10px]">

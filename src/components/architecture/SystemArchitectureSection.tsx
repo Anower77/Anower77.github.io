@@ -85,7 +85,7 @@ export function SystemArchitectureSection() {
     switch (nodeId) {
       case "client":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Client Ingress &amp; Retry Engine</span>
@@ -116,7 +116,7 @@ export function SystemArchitectureSection() {
 
       case "api-gateway":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Reverse Proxy &amp; Perimeter Protection</span>
@@ -144,7 +144,7 @@ export function SystemArchitectureSection() {
 
       case "auth-service":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Asymmetric Cryptographic Auth Pipeline</span>
@@ -168,7 +168,7 @@ export function SystemArchitectureSection() {
 
       case "backend-services":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Stateless Service Worker &amp; Pool Topology</span>
@@ -196,7 +196,7 @@ export function SystemArchitectureSection() {
 
       case "message-broker":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Event Streaming &amp; Dead-Letter Routing</span>
@@ -224,7 +224,7 @@ export function SystemArchitectureSection() {
 
       case "redis-cache":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Cache-Aside &amp; Distributed Lock Engine</span>
@@ -248,7 +248,7 @@ export function SystemArchitectureSection() {
 
       case "database":
         return (
-          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>PostgreSQL ACID Persistence &amp; WAL Streaming</span>
@@ -278,7 +278,7 @@ export function SystemArchitectureSection() {
   return (
     <section
       id="architecture"
-      className="py-20 lg:py-28 border-b border-surface-border/60 bg-[#0b0b0e]"
+      className="py-20 lg:py-28 border-b border-surface-border/60 bg-surface-subtle/30 dark:bg-[#0b0b0e] transition-colors duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">

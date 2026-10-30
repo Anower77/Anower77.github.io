@@ -115,7 +115,7 @@ export function SkillsSection() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2.5 py-1 rounded bg-[#16161a] border border-[#27272a] text-xs font-mono text-text-secondary group-hover:text-text-primary transition-colors flex items-center gap-1"
+                      className="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs font-mono text-text-secondary group-hover:text-text-primary transition-colors flex items-center gap-1"
                     >
                       <span className="w-1 h-1 rounded-full bg-accent/70" />
                       {skill}

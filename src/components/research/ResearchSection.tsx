@@ -47,7 +47,7 @@ export function ResearchSection() {
   return (
     <section
       id="research"
-      className="py-20 lg:py-28 border-b border-surface-border/60 bg-[#09090d] relative overflow-hidden"
+      className="py-20 lg:py-28 border-b border-surface-border/60 bg-surface-subtle/20 dark:bg-[#09090d] relative overflow-hidden transition-colors duration-200"
     >
       {/* Background scientific aura */}
       <div className="absolute top-1/3 right-10 -translate-y-1/2 w-[32rem] h-[32rem] bg-violet-600/5 rounded-full blur-3xl pointer-events-none" />

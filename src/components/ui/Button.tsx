@@ -32,9 +32,9 @@ export function Button({
 
   const variantClasses = {
     primary:
-      "bg-text-primary text-background hover:bg-neutral-200 active:bg-neutral-300 font-semibold shadow-sm",
+      "bg-text-primary text-background hover:opacity-90 active:opacity-80 font-semibold shadow-sm",
     secondary:
-      "bg-surface-subtle text-text-primary border border-surface-border hover:bg-surface-muted hover:border-neutral-600 active:bg-neutral-800",
+      "bg-surface-subtle text-text-primary border border-surface-border hover:bg-surface-muted hover:border-neutral-400 dark:hover:border-neutral-600",
     outline:
       "bg-transparent text-text-primary border border-surface-border hover:border-accent hover:text-accent active:bg-accent/10",
     ghost:

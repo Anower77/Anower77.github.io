@@ -25,7 +25,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#070709] border-t border-surface-border text-text-secondary py-16">
+    <footer className="bg-surface/60 dark:bg-[#070709] border-t border-surface-border text-text-secondary py-16 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Top Tier */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-10 border-b border-surface-border/50">

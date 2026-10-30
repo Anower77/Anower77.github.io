@@ -23,7 +23,7 @@ export function Badge({
       "bg-emerald-500/10 text-emerald-400 border border-emerald-500/25",
     amber: "bg-amber-500/10 text-amber-400 border border-amber-500/25",
     outline: "border border-surface-border text-text-secondary bg-transparent",
-    mono: "font-mono text-[11px] bg-[#141418] text-[#c4c4cc] border border-[#27272a] tracking-tight",
+    mono: "font-mono text-[11px] bg-surface-subtle text-text-secondary border border-surface-border tracking-tight",
   };
 
   return (

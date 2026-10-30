@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -58,7 +59,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         scrolled
-          ? "bg-[#09090b]/85 backdrop-blur-md border-b border-[#27272a]/70 py-3"
+          ? "bg-background/90 backdrop-blur-md border-b border-surface-border py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -73,14 +74,14 @@ export function Navbar({ onOpenResume }: NavbarProps) {
               <Terminal className="w-4 h-4 text-accent" />
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-sm text-text-primary group-hover:text-white tracking-tight transition-colors">
+              <span className="font-semibold text-sm text-text-primary group-hover:text-accent tracking-tight transition-colors">
                 {PERSONAL_INFO.name}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#111114]/80 p-1.5 rounded-full border border-surface-border/80">
+          <nav className="hidden lg:flex items-center gap-1 bg-surface/80 backdrop-blur-md p-1.5 rounded-full border border-surface-border shadow-sm">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -101,6 +102,8 @@ export function Navbar({ onOpenResume }: NavbarProps) {
 
           {/* Actions */}
           <div className="hidden sm:flex items-center gap-2.5">
+            <ThemeToggle />
+
             <a
               href={PERSONAL_INFO.links.github}
               target="_blank"
@@ -134,6 +137,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
 
           {/* Mobile menu button */}
           <div className="flex sm:hidden items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={onOpenResume}
               className="p-2 text-xs font-medium text-accent bg-surface-subtle border border-surface-border rounded-lg"
@@ -158,7 +162,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#09090b]/95 backdrop-blur-xl border-b border-surface-border px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top-4 duration-200">
+        <div className="sm:hidden bg-background/95 backdrop-blur-xl border-b border-surface-border px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top-4 duration-200">
           <div className="grid grid-cols-2 gap-2 pt-2 pb-4 border-b border-surface-border/50">
             {navLinks.map((link) => (
               <a

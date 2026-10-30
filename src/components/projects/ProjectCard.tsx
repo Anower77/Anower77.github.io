@@ -24,10 +24,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div
-      className={`rounded-2xl bg-surface-subtle border transition-all duration-300 flex flex-col justify-between overflow-hidden ${
+      className={`rounded-2xl bg-surface-subtle border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm ${
         project.isResearch
-          ? "border-violet-accent/40 hover:border-violet-accent bg-gradient-to-b from-[#14121c] to-surface-subtle"
-          : "border-surface-border hover:border-neutral-700"
+          ? "border-violet-accent/40 hover:border-violet-accent bg-gradient-to-b from-surface to-surface-subtle dark:from-[#14121c] dark:to-surface-subtle"
+          : "border-surface-border hover:border-neutral-400 dark:hover:border-neutral-700"
       }`}
     >
       <div className="p-6 sm:p-8 space-y-5">

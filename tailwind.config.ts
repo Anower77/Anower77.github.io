@@ -10,17 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#09090B",
+        background: "var(--bg-main)",
         surface: {
-          DEFAULT: "#111114",
-          subtle: "#18181B",
-          muted: "#202024",
-          border: "#27272A",
+          DEFAULT: "var(--bg-surface)",
+          subtle: "var(--bg-surface-subtle)",
+          muted: "var(--bg-surface-muted)",
+          border: "var(--border-main)",
         },
         accent: {
-          DEFAULT: "#3B82F6",
-          hover: "#2563EB",
-          muted: "#1D4ED8",
+          DEFAULT: "var(--accent)",
+          hover: "#1d4ed8",
+          muted: "#3b82f6",
           glow: "rgba(59, 130, 246, 0.15)",
         },
         violet: {
@@ -32,9 +32,9 @@ const config: Config = {
           glow: "rgba(16, 185, 129, 0.15)",
         },
         text: {
-          primary: "#FAFAFA",
-          secondary: "#A1A1AA",
-          muted: "#71717A",
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
       },
       fontFamily: {
@@ -57,7 +57,7 @@ const config: Config = {
         "data-stream": "dataStream 2s linear infinite",
       },
       backgroundImage: {
-        "grid-pattern": "radial-gradient(#27272a 1px, transparent 1px)",
+        "grid-pattern": "radial-gradient(currentColor 1px, transparent 1px)",
       },
     },
   },
@@ -65,4 +65,3 @@ const config: Config = {
 };
 
 export default config;
-
