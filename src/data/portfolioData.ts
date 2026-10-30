@@ -9,15 +9,15 @@ import {
 
 export const PERSONAL_INFO = {
   name: "Anower Hossain",
-  title: "Backend Developer | Python & Distributed Systems",
+  title: "Backend Engineer | Python & Distributed Systems",
   location: "Bangladesh",
   headline: "Building Systems That Scale.",
   positioning:
     "I build reliable backend systems, explore distributed architectures, and work on engineering solutions that connect software, infrastructure, and intelligent technologies.",
   shortBio:
-    "I am a Backend Developer focused on Python, Django, REST APIs, database engineering, and scalable backend architecture. I enjoy exploring distributed systems, cloud infrastructure, system design, and artificial intelligence.",
+    "I am a Backend Engineer focused on Python, Django, REST APIs, database engineering, and scalable backend architecture. I enjoy exploring distributed systems, cloud infrastructure, system design, and artificial intelligence.",
   aboutText: [
-    "I am a Backend Developer focused on building reliable, scalable, and maintainable software systems.",
+    "I am a Backend Engineer focused on building reliable, scalable, and maintainable software systems.",
     "My primary interests include Python backend development, Django, REST API engineering, database architecture, distributed systems, and cloud technologies.",
     "I enjoy understanding how systems work internally, identifying performance bottlenecks, designing reliable architectures, and solving practical engineering problems.",
     "Beyond software development, I am interested in artificial intelligence, neuroscience, cognitive computing, and brain-computer interfaces.",
@@ -100,14 +100,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "SFV Omega",
-    role: "Backend Developer",
-    period: "October 2025 – Present (verify)",
+    role: "Backend Engineer",
+    period: "October 2025 – Present",
     location: "Remote / Hybrid",
     isCurrent: true,
     description: [
       "Backend application development focusing on robust core logic and service architecture.",
       "REST API development with secure endpoint design and structured request validation.",
-      "Database integration and design, managing schema schemas, queries, and migrations.",
+      "Database integration and design, managing schemas, queries, and migrations.",
       "Backend service implementation and maintenance ensuring reliable runtime operations.",
     ],
     skills: ["Python", "Django", "PostgreSQL", "REST APIs", "Docker"],
@@ -115,7 +115,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     company: "EduCity Ed-tech Platform",
     role: "CS Instructor",
-    period: "Previous (verify dates)",
+    period: "Instructor Tenure",
     location: "Bangladesh",
     isCurrent: false,
     description: [
@@ -185,7 +185,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "dootgo",
-    title: "DootGo (Loijan)",
+    title: "DootGo",
     tagline: "Traveler-to-sender peer marketplace platform",
     category: "backend",
     description:
@@ -207,28 +207,6 @@ export const PROJECTS: Project[] = [
       "Multi-stage delivery workflow (requested, matched, in-transit, delivered)",
       "Trip listing and destination coordinate matching",
       "Decoupled notification architecture for delivery updates",
-    ],
-    status: "completed",
-  },
-  {
-    id: "lunchbari",
-    title: "Lunchbari",
-    tagline: "Enterprise catering and meal management backend",
-    category: "backend",
-    description:
-      "An office catering and subscription meal management platform designed to streamline meal scheduling, corporate catering orders, delivery dispatching, and vendor invoicing.",
-    problem:
-      "Office meal programs face high order volatility, complex recurring subscription schedules, multi-vendor coordination, and strict delivery timeframes.",
-    solution:
-      "Designed a centralized backend engine managing multi-tenant companies, food provider menus, rider dispatch schedules, and administrative order audit pipelines.",
-    techStack: ["Python", "Django", "PostgreSQL", "REST APIs", "Docker"],
-    features: [
-      "Corporate user and department management",
-      "Food provider menu and daily slot scheduling",
-      "Rider management and delivery assignment flows",
-      "Order management with cutoff windows",
-      "Payment and invoicing workflows",
-      "Administrative oversight and operational reporting",
     ],
     status: "completed",
   },
@@ -263,12 +241,50 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+export const BRAIN_TO_AI_RESEARCH = {
+  title: "Data Transfer from a Biological Brain to an AI Brain",
+  tagline: "Bi-directional neural spike decoding, continuous representation alignment, and artificial substrate synchronization",
+  status: "Theoretical Concept & Active Research Inception",
+  overview:
+    "An architectural inquiry exploring continuous, low-latency data translation protocols between biological cortical neural assemblies and deep artificial intelligence models. This concept bridges neurobiology, electrical signal acquisition, stochastic noise filtering, and high-dimensional transformer embedding spaces.",
+  pipelineStages: [
+    {
+      stage: "01 // Acquisition & Spike Sorting",
+      name: "Biological Neural Ingress",
+      description:
+        "High-density electrophysiological recording (multi-channel EEG and micro-electrode arrays). Sub-millisecond continuous action potential acquisition across targeted cortical regions.",
+      specs: ["Sampling Rate: 10kHz+", "Bandpass: 0.1Hz - 300Hz", "Artifact Removal: ICA & Wavelet Denoising"],
+    },
+    {
+      stage: "02 // Encoding & Feature Extraction",
+      name: "Spike-Time Matrix to Tensor Conversion",
+      description:
+        "Conversion of continuous electrophysiological voltages and discrete action potential rasters into structured spatiotemporal tensor embeddings preserving phase-locking and spectral frequency bands.",
+      specs: ["Spike-Timing-Dependent Plasticity mapping", "Theta-Gamma phase-amplitude coupling", "Sparse temporal embedding"],
+    },
+    {
+      stage: "03 // Cross-Substrate Translation",
+      name: "Biological-to-Digital Latent Projection",
+      description:
+        "Contrastive manifold alignment projecting biological cognitive state vectors into foundation AI transformer latent spaces, enabling artificial neural networks to decode perceptual, motor, or semantic intent.",
+      specs: ["Shared Semantic Manifold", "Contrastive InfoNCE Loss", "Subject-invariant representation normalization"],
+    },
+    {
+      stage: "04 // Bidirectional Synthesis",
+      name: "AI Inference & Feedback Dispatch",
+      description:
+        "The AI reasoning engine processes ingested biological states, generates real-time predictions or contextual extensions, and synthesizes sensory feedback patterns transmittable back across neural interfaces.",
+      specs: ["Inference SLA: < 15ms", "Closed-loop neuro-adaptive feedback", "Adaptive neural stimulation protocols"],
+    },
+  ],
+};
+
 export const RESEARCH_INTERESTS = [
   {
-    title: "Artificial Intelligence",
+    title: "Data Transfer: Biological Brain to AI Brain",
     icon: "Brain",
     description:
-      "Representation learning, neural semantic embeddings, and bridging multimodal signals (vision, language, and electrophysiology).",
+      "Investigating high-throughput bi-directional data transfer frameworks: mapping biological neural spike raster matrices and cortical oscillations into continuous high-dimensional latent embeddings for foundation AI models.",
   },
   {
     title: "Brain-Computer Interfaces (BCI)",
@@ -313,10 +329,10 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     id: "icpc-dhaka",
     title: "ACM-ICPC Dhaka Regionalist",
     organization: "International Collegiate Programming Contest (ICPC)",
-    badge: "FCI Team",
+    badge: "Regional Contestant",
     category: "competitive-programming",
     description:
-      "Qualified for and competed in the prestigious ACM-ICPC Dhaka Regional contest representing the Feni Computer Institute (FCI) competitive programming team, solving algorithmic challenges under strict time and resource constraints.",
+      "Qualified for and competed in the prestigious ACM-ICPC Dhaka Regional contest representing collegiate competitive programming, solving algorithmic challenges under strict time and resource constraints.",
   },
   {
     id: "iymc-2023",
@@ -361,21 +377,11 @@ export const EDUCATION: EducationItem[] = [
   {
     institution: "Bangladesh University of Business and Technology (BUBT)",
     degree: "B.Sc. in Computer Science and Engineering",
-    period: "Undergraduate Studies (verify dates)",
+    period: "Undergraduate Studies",
     status: "Enrolled",
     details: [
       "Advanced coursework in Operating Systems, Database Systems, Computer Networks, and Distributed Computing.",
       "Active participant in collegiate algorithmic problem solving and programming activities.",
-    ],
-  },
-  {
-    institution: "Feni Computer Institute",
-    degree: "Diploma in Computer Science and Engineering",
-    period: "Graduated 2024",
-    status: "Completed",
-    details: [
-      "Core curriculum in Computer Programming, Relational Database Management, Data Structures, and Hardware Fundamentals.",
-      "Represented the institute in national programming contests and ACM-ICPC regional events.",
     ],
   },
 ];
@@ -408,7 +414,7 @@ Designing a system like bit.ly seems deceptively simple, but at scale it reveals
 #### The ID Generation Problem:
 - **Base62 Encoding:** 62^7 = ~3.5 Trillion unique identifiers.
 - **Why not MD5/SHA256 truncate?** Hashing produces collisions that require expensive database lookups to verify uniqueness.
-- **Distributed ID Generation:** Utilizing a Snowflake-like distributed counter or range-based token generator service (e.g., Ticket Server via Redis or ZooKeeper) ensures $O(1)$ collision-free ID generation.
+- **Distributed ID Generation:** Utilizing a Snowflake-like distributed counter or range-based token generator service (e.g., Ticket Server via Redis or ZooKeeper) ensures O(1) collision-free ID generation.
 
 #### Caching Topology:
 - **Cache-Aside Pattern:** Redis holds the most frequently accessed 20% of URLs (Pareto Principle), servicing 80% of read traffic directly from memory.
@@ -476,4 +482,3 @@ Designing a system like bit.ly seems deceptively simple, but at scale it reveals
     featured: false,
   },
 ];
-

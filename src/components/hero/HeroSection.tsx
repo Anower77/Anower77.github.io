@@ -47,13 +47,20 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
 
             {/* Supporting Text */}
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl font-normal">
-              I&apos;m <span className="text-text-primary font-medium">{PERSONAL_INFO.name}</span>, a Backend Developer passionate about scalable backend systems, distributed architecture, cloud infrastructure, and intelligent technologies.
+              I&apos;m <span className="text-text-primary font-medium">{PERSONAL_INFO.name}</span>, a Backend Engineer passionate about scalable backend systems, distributed architecture, cloud infrastructure, and intelligent technologies.
             </p>
 
             {/* Quick Tech Highlights */}
             <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs text-text-muted">
               <span className="text-text-primary font-semibold">Focus:</span>
-              {["Python", "Django", "PostgreSQL", "Redis", "RabbitMQ", "Kafka", "Docker", "AWS"].map((tech) => (
+              {[
+                "AWS (EC2, S3, RDS, ECS, Lambda)",
+                "Cloud Architecture",
+                "Docker & Containers",
+                "Distributed Infrastructure",
+                "CloudWatch & Telemetry",
+                "Nginx & Edge Routing",
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-2 py-0.5 rounded bg-surface-subtle border border-surface-border/80 text-text-secondary"

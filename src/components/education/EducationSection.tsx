@@ -16,7 +16,7 @@ export function EducationSection() {
           description="Foundations in theoretical computer science, operating systems, algorithms, and computational mathematics."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 max-w-5xl">
+        <div className="mt-12 max-w-3xl">
           {EDUCATION.map((edu, index) => (
             <div
               key={index}
@@ -34,7 +34,7 @@ export function EducationSection() {
                   )}
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-bold text-text-primary">
+                <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
                   {edu.institution}
                 </h3>
                 <p className="text-sm font-medium text-accent mt-1">
@@ -69,4 +69,3 @@ export function EducationSection() {
     </section>
   );
 }
-

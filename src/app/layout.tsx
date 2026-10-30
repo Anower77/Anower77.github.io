@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Anower Hossain | Backend Developer | Python & Distributed Systems",
+  title: "Anower Hossain | Backend Engineer | Python & Distributed Systems",
   description:
-    "Explore the portfolio of Anower Hossain, a Backend Developer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
+    "Explore the portfolio of Anower Hossain, a Backend Engineer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
   keywords: [
     "Anower Hossain",
-    "Backend Developer",
-    "Python Developer",
+    "Backend Engineer",
+    "Python Engineer",
     "Django",
     "Django REST Framework",
     "Distributed Systems",
+    "Cloud Architecture",
     "PostgreSQL",
     "RabbitMQ",
     "Kafka",
@@ -28,16 +29,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://anower77.github.io",
-    title: "Anower Hossain | Backend Developer | Python & Distributed Systems",
+    title: "Anower Hossain | Backend Engineer | Python & Distributed Systems",
     description:
-      "Explore the portfolio of Anower Hossain, a Backend Developer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
+      "Explore the portfolio of Anower Hossain, a Backend Engineer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
     siteName: "Anower Hossain Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anower Hossain | Backend Developer | Python & Distributed Systems",
+    title: "Anower Hossain | Backend Engineer | Python & Distributed Systems",
     description:
-      "Explore the portfolio of Anower Hossain, a Backend Developer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
+      "Explore the portfolio of Anower Hossain, a Backend Engineer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
     creator: "@Anower77",
   },
   robots: {

@@ -12,12 +12,14 @@ import {
   Layers,
   Database,
   Play,
-  RotateCcw,
   CheckCircle2,
   AlertTriangle,
   Cpu,
-  ArrowRight,
   ChevronRight,
+  ArrowRight,
+  RefreshCw,
+  Lock,
+  Zap,
 } from "lucide-react";
 
 export function SystemArchitectureSection() {
@@ -34,29 +36,27 @@ export function SystemArchitectureSection() {
     setIsSimulating(true);
     setSimStep(1);
 
-    const stepDelay = 1100;
-    const timeouts = [
-      setTimeout(() => {
-        setSimStep(2);
-        setSelectedNodeId("auth-service");
-      }, stepDelay * 1),
-      setTimeout(() => {
-        setSimStep(3);
-        setSelectedNodeId("redis-cache");
-      }, stepDelay * 2),
-      setTimeout(() => {
-        setSimStep(4);
-        setSelectedNodeId("database");
-      }, stepDelay * 3),
-      setTimeout(() => {
-        setSimStep(5);
-        setSelectedNodeId("message-broker");
-      }, stepDelay * 4),
-      setTimeout(() => {
-        setIsSimulating(false);
-        setSimStep(null);
-      }, stepDelay * 5),
-    ];
+    const stepDelay = 1200;
+    setTimeout(() => {
+      setSimStep(2);
+      setSelectedNodeId("auth-service");
+    }, stepDelay * 1);
+    setTimeout(() => {
+      setSimStep(3);
+      setSelectedNodeId("redis-cache");
+    }, stepDelay * 2);
+    setTimeout(() => {
+      setSimStep(4);
+      setSelectedNodeId("database");
+    }, stepDelay * 3);
+    setTimeout(() => {
+      setSimStep(5);
+      setSelectedNodeId("message-broker");
+    }, stepDelay * 4);
+    setTimeout(() => {
+      setIsSimulating(false);
+      setSimStep(null);
+    }, stepDelay * 5);
   };
 
   const getNodeIcon = (id: string) => {
@@ -80,6 +80,201 @@ export function SystemArchitectureSection() {
     }
   };
 
+  // Dedicated Component Architecture Visual Diagram
+  const renderComponentVisualDiagram = (nodeId: string) => {
+    switch (nodeId) {
+      case "client":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Client Ingress &amp; Retry Engine</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Client Device</span>
+                <span className="text-[10px] text-text-muted">Web / Mobile / Webhook</span>
+                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface-subtle text-accent inline-block">
+                  Idempotency-Key
+                </div>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border flex flex-col justify-center items-center">
+                <span className="text-[10px] text-accent block font-mono">TLS 1.3 / HTTP/2</span>
+                <span className="text-text-muted text-[10px]">Bearer JWT Auth</span>
+                <span className="text-emerald-400 text-[10px] mt-0.5">Encrypted Ingress</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Anycast DNS / CDN</span>
+                <span className="text-[10px] text-text-muted">DDoS Perimeter</span>
+                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface-subtle text-emerald-400 inline-block">
+                  Edge POP Routing
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "api-gateway":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Reverse Proxy &amp; Perimeter Protection</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">TLS Termination</span>
+                <span className="text-[10px] text-text-muted">SSL Offload &lt;1ms</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Token Bucket</span>
+                <span className="text-[10px] text-text-muted">Rate Limit: 100 req/s</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">JWKS Stateless</span>
+                <span className="text-[10px] text-text-muted">Signature Verify</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Upstream Pool</span>
+                <span className="text-[10px] text-text-muted">Round-Robin Proxy</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "auth-service":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Asymmetric Cryptographic Auth Pipeline</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Argon2id Hash</span>
+                <span className="text-[10px] text-text-muted">Salted Credential Store</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">RS256 Private Key</span>
+                <span className="text-[10px] text-accent">Access (15m) + Refresh (7d)</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">JWKS Endpoint</span>
+                <span className="text-[10px] text-emerald-400">Public Key Distribution</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "backend-services":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Stateless Service Worker &amp; Pool Topology</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">WSGI / ASGI</span>
+                <span className="text-[10px] text-text-muted">Gunicorn Worker Pool</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Django Core</span>
+                <span className="text-[10px] text-text-muted">Domain State Machine</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">PgBouncer</span>
+                <span className="text-[10px] text-text-muted">DB Pool Multiplexer</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Celery Producer</span>
+                <span className="text-[10px] text-accent">Async Task Offload</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "message-broker":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Event Streaming &amp; Dead-Letter Routing</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Exchange</span>
+                <span className="text-[10px] text-text-muted">Topic / Direct Binding</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Durable Queues</span>
+                <span className="text-[10px] text-text-muted">RabbitMQ / Kafka Disk</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">DLX Quarantine</span>
+                <span className="text-[10px] text-amber-400">Retry Count &gt; 3 Expire</span>
+              </div>
+              <div className="p-2 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Worker Consumers</span>
+                <span className="text-[10px] text-emerald-400">Celery Autoscaling</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "redis-cache":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>Cache-Aside &amp; Distributed Lock Engine</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Cache-Aside</span>
+                <span className="text-[10px] text-emerald-400">Hit SLA &lt; 0.8ms</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">XFetch Stampede</span>
+                <span className="text-[10px] text-accent">Probabilistic Refresh</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Redlock Mutex</span>
+                <span className="text-[10px] text-text-muted">SET NX PX 30000ms</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "database":
+        return (
+          <div className="p-4 rounded-xl bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
+              <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
+              <span>PostgreSQL ACID Persistence &amp; WAL Streaming</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Query Planner</span>
+                <span className="text-[10px] text-text-muted">B-Tree Compound Index</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">WAL Archiver</span>
+                <span className="text-[10px] text-accent">Point-in-Time Recovery</span>
+              </div>
+              <div className="p-2.5 rounded bg-surface border border-surface-border">
+                <span className="text-text-primary block font-semibold text-xs">Read Replica</span>
+                <span className="text-[10px] text-emerald-400">Async Stream Replication</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <section
       id="architecture"
@@ -98,7 +293,7 @@ export function SystemArchitectureSection() {
             <button
               onClick={runSimulation}
               disabled={isSimulating}
-              className="px-4 py-2 rounded-lg bg-accent/20 hover:bg-accent/30 text-accent border border-accent/40 font-mono text-xs font-semibold flex items-center gap-2 transition-all disabled:opacity-50"
+              className="px-4 py-2 rounded-lg bg-accent/20 hover:bg-accent/30 text-accent border border-accent/40 font-mono text-xs font-semibold flex items-center gap-2 transition-all disabled:opacity-50 shadow-sm"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               {isSimulating ? `Tracing Step ${simStep}/5...` : "Simulate Request Trace"}
@@ -106,11 +301,11 @@ export function SystemArchitectureSection() {
           </div>
         </div>
 
-        {/* Visual Architecture Diagram Box */}
+        {/* Global Pipeline Architecture Visual Map */}
         <div className="p-6 rounded-2xl bg-surface-subtle border border-surface-border shadow-xl relative overflow-hidden">
           <div className="text-[11px] font-mono text-text-muted mb-4 flex items-center justify-between">
             <span>PIPELINE: Client → API Gateway → Auth / Services → Broker → DB / Cache</span>
-            <span className="text-accent hidden sm:inline">Click any node to inspect internals</span>
+            <span className="text-accent hidden sm:inline">Select any component to inspect subsystem schematic</span>
           </div>
 
           {/* Interactive Pipeline Diagram */}
@@ -118,11 +313,11 @@ export function SystemArchitectureSection() {
             {ARCHITECTURE_NODES.map((node, index) => {
               const isSelected = selectedNodeId === node.id;
               const isCurrentStep =
-                simStep === 1 && (node.id === "client" || node.id === "api-gateway") ||
-                simStep === 2 && node.id === "auth-service" ||
-                simStep === 3 && node.id === "redis-cache" ||
-                simStep === 4 && node.id === "database" ||
-                simStep === 5 && node.id === "message-broker";
+                (simStep === 1 && (node.id === "client" || node.id === "api-gateway")) ||
+                (simStep === 2 && node.id === "auth-service") ||
+                (simStep === 3 && node.id === "redis-cache") ||
+                (simStep === 4 && node.id === "database") ||
+                (simStep === 5 && node.id === "message-broker");
 
               return (
                 <div key={node.id} className="relative">
@@ -183,10 +378,10 @@ export function SystemArchitectureSection() {
           )}
         </div>
 
-        {/* Selected Node Deep Dive Inspector */}
+        {/* Selected Component Deep Dive with Architecture Diagram */}
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Main Inspection Panel */}
-          <div className="lg:col-span-8 p-6 sm:p-8 rounded-2xl bg-surface-subtle border border-surface-border">
+          <div className="lg:col-span-8 p-6 sm:p-8 rounded-2xl bg-surface-subtle border border-surface-border space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-surface-border">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-accent font-semibold block">
@@ -204,8 +399,13 @@ export function SystemArchitectureSection() {
               </div>
             </div>
 
+            {/* Actual Architecture Visual Diagram for This Component */}
+            <div>
+              {renderComponentVisualDiagram(selectedNode.id)}
+            </div>
+
             {/* Role & Tech */}
-            <div className="mt-4 space-y-3">
+            <div className="space-y-3">
               <p className="text-sm text-text-secondary">
                 <strong className="text-text-primary font-medium">System Role:</strong>{" "}
                 {selectedNode.role}
@@ -225,7 +425,7 @@ export function SystemArchitectureSection() {
             </div>
 
             {/* Architectural Responsibilities */}
-            <div className="mt-6">
+            <div>
               <h4 className="text-xs font-mono uppercase tracking-wider text-text-muted font-semibold mb-3 flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-accent" />
                 Key Engineering Responsibilities
@@ -241,7 +441,7 @@ export function SystemArchitectureSection() {
             </div>
 
             {/* Failure Modes & Mitigations */}
-            <div className="mt-6 pt-6 border-t border-surface-border grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="pt-6 border-t border-surface-border grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-surface border border-surface-border">
                 <h5 className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-2 flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5" />
@@ -315,4 +515,3 @@ export function SystemArchitectureSection() {
     </section>
   );
 }
-

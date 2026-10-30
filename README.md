@@ -1,8 +1,8 @@
 # Anower Hossain — Engineering Portfolio
 
-Production-grade personal portfolio website for **Anower Hossain** (Backend Developer | Python & Distributed Systems).
+Production-grade personal portfolio website for **Anower Hossain** (Backend Engineer | Python & Distributed Systems).
 
-Engineered to reflect backend fundamentals, practical systems experience, distributed architecture design, and ongoing research in brain-computer interfaces (BCI) and EEG signal decoding.
+Engineered to reflect backend fundamentals, cloud infrastructure, distributed architecture design, and ongoing research in brain-computer interfaces (BCI) and data transfer between biological brains and AI systems.
 
 ---
 
@@ -29,6 +29,8 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
 1. **Navigation Bar:** Sticky, responsive navigation with quick links to GitHub, LinkedIn, and dynamic Resume viewer.
 2. **Hero Section:**
    - Headline: *"Building Systems That Scale."*
+   - Subtitle: *Backend Engineer | Python & Distributed Systems*
+   - Focus: Cloud infrastructure (AWS EC2, S3, RDS, ECS, Lambda, Docker, Kubernetes, Distributed Infrastructure, Nginx).
    - Interactive Backend Terminal with real-time telemetry simulation (Redis cache hit ratio, p99 ingress latency, DB connection pool, Kafka queue backlog) and diagnostic CLI commands (`help`, `info`, `stack`, `services`, `curl /health`).
 3. **About Section ("Engineering Beyond the Code"):**
    - Editorial narrative emphasizing reliable backends, system internals, and mechanical sympathy.
@@ -38,27 +40,27 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
    - Zero fabricated percentage meters; strictly verified capabilities.
 5. **Special Feature ("How I Think About Systems"):**
    - Visual interactive architectural pipeline: Client -> API Gateway -> Backend Services -> Message Broker -> Database / Cache.
+   - Dedicated subsystem architecture schematics for each of the 7 components.
    - Clickable deep dives into failure modes, mitigations, and typical SLAs for each component.
    - One-click *Simulate Request Trace* animating a request packet through each hop.
 6. **Experience Timeline:**
-   - Backend Developer @ SFV Omega
+   - Backend Engineer @ SFV Omega
    - CS Instructor @ EduCity Ed-tech Platform
 7. **Featured Projects:**
    - **CP Platform:** Competitive programming engine in Django 5.2 and PostgreSQL.
    - **Microservices Lab:** Multi-service decoupled architecture with Docker, RabbitMQ, Kafka, and GitHub Actions.
-   - **DootGo (Loijan):** Traveler-to-sender delivery marketplace with role state machines.
-   - **Lunchbari:** Enterprise catering and dispatch management backend.
+   - **DootGo:** Traveler-to-sender delivery marketplace with role state machines.
    - **Few-Shot Cross-Dataset EEG-to-Visual Retrieval:** Ongoing research on THINGS-EEG2 and EEG-ImageNet.
 8. **Research & Scientific Frontiers:**
-   - Dedicated laboratory view highlighting non-invasive BCIs, EEG signal processing, and multimodal representation learning.
+   - **Core Research Concept:** *Data Transfer from a Biological Brain to an AI Brain* (bi-directional neural spike decoding, continuous representation alignment, and artificial substrate synchronization).
+   - **Signal Benchmarks:** Few-shot cross-dataset EEG-to-visual retrieval across THINGS-EEG2 and EEG-ImageNet.
 9. **Achievements:**
-   - ACM-ICPC Dhaka Regionalist (FCI Team)
+   - ACM-ICPC Dhaka Regionalist
    - IYMC 2023 Bronze Honour
    - National STEM Olympiad (Second Round)
    - IAAC Astrophysics Bronze Medalist & Ambassador Invitation
 10. **Education:**
-    - Bangladesh University of Business and Technology (BUBT) — CSE
-    - Feni Computer Institute — Diploma in CSE (2024)
+    - Bangladesh University of Business and Technology (BUBT) — B.Sc. in Computer Science and Engineering
 11. **Engineering Notes / Blog:**
     - Featured Deep Dive: *Designing a Highly Scalable URL Shortener* (linked to LinkedIn discussion).
     - Architecture note indexes for Redis cache stampede, cache restarts, transactional outbox pattern, and DB index tuning.

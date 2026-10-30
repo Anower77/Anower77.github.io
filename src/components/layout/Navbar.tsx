@@ -76,9 +76,6 @@ export function Navbar({ onOpenResume }: NavbarProps) {
               <span className="font-semibold text-sm text-text-primary group-hover:text-white tracking-tight transition-colors">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="font-mono text-[10px] text-text-muted tracking-tight">
-                Backend Engineer
-              </span>
             </div>
           </Link>
 

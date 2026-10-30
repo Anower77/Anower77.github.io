@@ -62,20 +62,19 @@ x-engine-status: "optimal"
         break;
       case "info":
         response = `Anower Hossain
-Title   : Backend Developer | Python & Distributed Systems
+Title   : Backend Engineer | Python & Distributed Systems
 Location: Bangladesh
-Summary : Building resilient backend services, optimizing data pipelines, and exploring distributed event-driven systems.`;
+Summary : Building resilient backend services, optimizing cloud data pipelines, and exploring distributed event-driven systems.`;
         break;
       case "stack":
-        response = `Python, Django REST Framework, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, AWS, Linux`;
+        response = `Python, Django REST Framework, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, AWS (EC2, S3, RDS, ECS), Linux`;
         break;
       case "services":
-        response = `Deployed Architectures:
+        response = `Architectures & Systems:
   [1] CP Platform (Django 5.2 + PostgreSQL)
   [2] Microservices Lab (API Gateway + Auth + Kafka/RabbitMQ)
   [3] DootGo (Marketplace State Machine)
-  [4] Lunchbari (Catering Operations Core)
-  [5] EEG Retrieval Engine (Few-shot PyTorch alignment - Ongoing)`;
+  [4] Brain-to-AI Data Transfer & Neural Spike Alignment`;
         break;
       case "architecture":
         response = `Flow: Client -> API Gateway -> Auth Service (JWT/JWKS) -> Backend Workers -> RabbitMQ/Kafka -> DB/Cache (Postgres + Redis)`;
