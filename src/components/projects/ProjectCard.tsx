@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <div
       className={`rounded-2xl bg-surface-subtle border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm ${
         project.isResearch
-          ? "border-violet-accent/40 hover:border-violet-accent bg-gradient-to-b from-surface to-surface-subtle dark:from-[#14121c] dark:to-surface-subtle"
+          ? "border-violet-300 dark:border-violet-500/40 hover:border-violet-400 bg-gradient-to-b from-violet-50/30 to-surface-subtle dark:from-[#14121c] dark:to-surface-subtle"
           : "border-surface-border hover:border-neutral-400 dark:hover:border-neutral-700"
       }`}
     >
@@ -39,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 {project.title}
               </h3>
               {project.isResearch ? (
-                <Badge variant="mono" className="text-violet-400 border-violet-500/30">
+                <Badge variant="mono" className="text-violet-700 dark:text-violet-400 border-violet-300 dark:border-violet-500/30 bg-violet-100/70 dark:bg-violet-950/40">
                   <FlaskConical className="w-3 h-3" />
                   Ongoing Research
                 </Badge>

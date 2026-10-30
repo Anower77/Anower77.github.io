@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Terminal, Activity, Layers, Server, Play, CornerDownLeft } from "lucide-react";
+import { Terminal, Activity, Layers, CornerDownLeft } from "lucide-react";
 
 export function InteractiveArchitectureTerminal() {
   const [activeTab, setActiveTab] = useState<"terminal" | "telemetry" | "cluster">("terminal");
@@ -96,27 +96,27 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
   };
 
   return (
-    <div className="w-full rounded-xl border border-surface-border bg-[#0d0d10] shadow-2xl overflow-hidden font-mono text-xs">
+    <div className="w-full rounded-2xl border border-neutral-800 bg-[#0c0d12] shadow-2xl overflow-hidden font-mono text-xs">
       {/* Terminal Title Bar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-[#121216] border-b border-surface-border select-none">
+      <div className="flex items-center justify-between px-4 py-3 bg-[#13141b] border-b border-neutral-800 select-none">
         <div className="flex items-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
           <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-          <span className="ml-2 text-[11px] text-text-muted font-sans font-medium flex items-center gap-1.5">
-            <Terminal className="w-3.5 h-3.5 text-accent" />
+          <span className="ml-2 text-[11px] text-neutral-400 font-sans font-medium flex items-center gap-1.5">
+            <Terminal className="w-3.5 h-3.5 text-blue-400" />
             anower@edge-gateway:~
           </span>
         </div>
 
         {/* Tab Switchers */}
-        <div className="flex items-center bg-[#18181d] rounded-lg p-0.5 border border-surface-border/50 text-[11px]">
+        <div className="flex items-center bg-[#1c1d25] rounded-lg p-0.5 border border-neutral-700/60 text-[11px]">
           <button
             onClick={() => setActiveTab("terminal")}
             className={`px-2.5 py-1 rounded-md transition-colors ${
               activeTab === "terminal"
-                ? "bg-[#25252d] text-text-primary font-semibold"
-                : "text-text-muted hover:text-text-secondary"
+                ? "bg-[#2a2c38] text-white font-semibold"
+                : "text-neutral-400 hover:text-neutral-200"
             }`}
           >
             CLI
@@ -125,8 +125,8 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
             onClick={() => setActiveTab("telemetry")}
             className={`px-2.5 py-1 rounded-md transition-colors flex items-center gap-1 ${
               activeTab === "telemetry"
-                ? "bg-[#25252d] text-text-primary font-semibold"
-                : "text-text-muted hover:text-text-secondary"
+                ? "bg-[#2a2c38] text-white font-semibold"
+                : "text-neutral-400 hover:text-neutral-200"
             }`}
           >
             <Activity className="w-3 h-3 text-emerald-400" />
@@ -136,8 +136,8 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
             onClick={() => setActiveTab("cluster")}
             className={`px-2.5 py-1 rounded-md transition-colors ${
               activeTab === "cluster"
-                ? "bg-[#25252d] text-text-primary font-semibold"
-                : "text-text-muted hover:text-text-secondary"
+                ? "bg-[#2a2c38] text-white font-semibold"
+                : "text-neutral-400 hover:text-neutral-200"
             }`}
           >
             Topology
@@ -149,17 +149,17 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
       {activeTab === "terminal" && (
         <div className="p-4 flex flex-col h-[320px]">
           <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin">
-            <div className="text-text-muted text-[11px] pb-1 border-b border-surface-border/40">
-              Session initialized: TLS 1.3 encrypted • Type <code className="text-accent font-bold">help</code> or click quick commands below.
+            <div className="text-neutral-400 text-[11px] pb-1 border-b border-neutral-800">
+              Session initialized: TLS 1.3 encrypted • Type <code className="text-blue-400 font-bold">help</code> or click quick commands below.
             </div>
 
             {history.map((item, idx) => (
               <div key={idx} className="space-y-1">
-                <div className="flex items-center gap-2 text-text-primary">
-                  <span className="text-accent font-bold">λ</span>
-                  <span className="text-text-secondary">{item.cmd}</span>
+                <div className="flex items-center gap-2 text-white">
+                  <span className="text-blue-400 font-bold">λ</span>
+                  <span className="text-neutral-300">{item.cmd}</span>
                 </div>
-                <div className="text-text-secondary pl-4 whitespace-pre-wrap leading-relaxed font-mono text-[11px] border-l border-surface-border/40">
+                <div className="text-neutral-300 pl-4 whitespace-pre-wrap leading-relaxed font-mono text-[11px] border-l border-neutral-800">
                   {item.res}
                 </div>
               </div>
@@ -167,12 +167,12 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
           </div>
 
           {/* Quick command buttons */}
-          <div className="pt-2 pb-2 flex flex-wrap gap-1.5 border-t border-surface-border/50 text-[10px]">
+          <div className="pt-2 pb-2 flex flex-wrap gap-1.5 border-t border-neutral-800 text-[10px]">
             {["help", "info", "stack", "services", "curl /health", "clear"].map((q) => (
               <button
                 key={q}
                 onClick={() => handleCommand(q)}
-                className="px-2 py-0.5 rounded bg-surface-subtle hover:bg-surface-muted text-text-muted hover:text-text-primary border border-surface-border transition-colors"
+                className="px-2 py-0.5 rounded bg-neutral-800/80 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-colors"
               >
                 {q}
               </button>
@@ -185,19 +185,19 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
               e.preventDefault();
               handleCommand();
             }}
-            className="flex items-center gap-2 pt-1 border-t border-surface-border/60"
+            className="flex items-center gap-2 pt-1 border-t border-neutral-800"
           >
-            <span className="text-accent font-bold">λ</span>
+            <span className="text-blue-400 font-bold">λ</span>
             <input
               type="text"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               placeholder="run diagnostic command..."
-              className="flex-1 bg-transparent border-none text-text-primary placeholder:text-text-muted/60 focus:outline-none text-xs font-mono"
+              className="flex-1 bg-transparent border-none text-white placeholder:text-neutral-500 focus:outline-none text-xs font-mono"
             />
             <button
               type="submit"
-              className="p-1 text-text-muted hover:text-accent rounded transition-colors"
+              className="p-1 text-neutral-400 hover:text-blue-400 rounded transition-colors"
               aria-label="Submit command"
             >
               <CornerDownLeft className="w-3.5 h-3.5" />
@@ -210,8 +210,8 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
       {activeTab === "telemetry" && (
         <div className="p-5 h-[320px] flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-surface-border/50">
-              <span className="text-text-muted">Node Status: cluster-gateway-01</span>
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+              <span className="text-neutral-400">Node Status: cluster-gateway-01</span>
               <span className="inline-flex items-center gap-1.5 text-emerald-400 text-[11px]">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                 Live Telemetry
@@ -219,43 +219,43 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
             </div>
 
             <div className="grid grid-cols-2 gap-3 mt-4">
-              <div className="p-3 rounded-lg bg-surface-subtle border border-surface-border">
-                <span className="text-text-muted text-[10px] uppercase block">Cache Hit Rate (Redis)</span>
+              <div className="p-3 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-neutral-400 text-[10px] uppercase block">Cache Hit Rate (Redis)</span>
                 <span className="text-xl font-bold text-emerald-400 mt-1 block">
                   {metrics.cacheHitRatio}%
                 </span>
-                <span className="text-[10px] text-text-muted mt-0.5 block">Target &gt; 95%</span>
+                <span className="text-[10px] text-neutral-500 mt-0.5 block">Target &gt; 95%</span>
               </div>
 
-              <div className="p-3 rounded-lg bg-surface-subtle border border-surface-border">
-                <span className="text-text-muted text-[10px] uppercase block">p99 Latency (API Ingress)</span>
-                <span className="text-xl font-bold text-accent mt-1 block">
+              <div className="p-3 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-neutral-400 text-[10px] uppercase block">p99 Latency (API Ingress)</span>
+                <span className="text-xl font-bold text-blue-400 mt-1 block">
                   {metrics.p99Latency} ms
                 </span>
-                <span className="text-[10px] text-text-muted mt-0.5 block">SLA: &lt; 50 ms</span>
+                <span className="text-[10px] text-neutral-500 mt-0.5 block">SLA: &lt; 50 ms</span>
               </div>
 
-              <div className="p-3 rounded-lg bg-surface-subtle border border-surface-border">
-                <span className="text-text-muted text-[10px] uppercase block">DB Connection Pool</span>
-                <span className="text-xl font-bold text-text-primary mt-1 block">
+              <div className="p-3 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-neutral-400 text-[10px] uppercase block">DB Connection Pool</span>
+                <span className="text-xl font-bold text-white mt-1 block">
                   {metrics.activeConnections} / 200
                 </span>
-                <span className="text-[10px] text-text-muted mt-0.5 block">PgBouncer multiplexed</span>
+                <span className="text-[10px] text-neutral-500 mt-0.5 block">PgBouncer multiplexed</span>
               </div>
 
-              <div className="p-3 rounded-lg bg-surface-subtle border border-surface-border">
-                <span className="text-text-muted text-[10px] uppercase block">Queue Backlog (Kafka/Celery)</span>
+              <div className="p-3 rounded-lg bg-neutral-900/90 border border-neutral-800">
+                <span className="text-neutral-400 text-[10px] uppercase block">Queue Backlog (Kafka/Celery)</span>
                 <span className="text-xl font-bold text-emerald-400 mt-1 block">
                   {metrics.queueLag} msgs
                 </span>
-                <span className="text-[10px] text-text-muted mt-0.5 block">Drain rate: 450 msg/s</span>
+                <span className="text-[10px] text-neutral-500 mt-0.5 block">Drain rate: 450 msg/s</span>
               </div>
             </div>
           </div>
 
-          <div className="p-2.5 rounded bg-surface-subtle/80 border border-surface-border text-[11px] text-text-secondary flex items-center justify-between">
+          <div className="p-2.5 rounded bg-neutral-900/80 border border-neutral-800 text-[11px] text-neutral-300 flex items-center justify-between">
             <span>Primary Datastore: PostgreSQL 16 (WAL streaming OK)</span>
-            <span className="text-accent font-semibold">Healthy</span>
+            <span className="text-blue-400 font-semibold">Healthy</span>
           </div>
         </div>
       )}
@@ -263,46 +263,46 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
       {/* Tab 3: Topology */}
       {activeTab === "cluster" && (
         <div className="p-4 h-[320px] flex flex-col justify-center space-y-3">
-          <div className="text-[11px] text-text-muted mb-1 text-center">
+          <div className="text-[11px] text-neutral-400 mb-1 text-center">
             Distributed Service Topology
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-center justify-between p-2 rounded bg-surface-subtle border border-surface-border">
-              <span className="text-text-primary font-medium flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent" />
+            <div className="flex items-center justify-between p-2 rounded bg-neutral-900/90 border border-neutral-800">
+              <span className="text-white font-medium flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-400" />
                 API Gateway / Reverse Proxy
               </span>
-              <span className="text-text-muted font-mono text-[10px]">Nginx • TLS 1.3</span>
+              <span className="text-neutral-400 font-mono text-[10px]">Nginx • TLS 1.3</span>
             </div>
 
             <div className="flex justify-center">
-              <span className="text-text-muted text-[10px] font-mono">↓ route: JWT Header validation</span>
+              <span className="text-neutral-500 text-[10px] font-mono">↓ route: JWT Header validation</span>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
-              <div className="p-2 rounded bg-surface-subtle border border-surface-border text-center">
-                <span className="text-text-primary block font-medium">Django REST Engine</span>
-                <span className="text-[10px] text-text-muted font-mono">Stateless Services</span>
+              <div className="p-2 rounded bg-neutral-900/90 border border-neutral-800 text-center">
+                <span className="text-white block font-medium">Django REST Engine</span>
+                <span className="text-[10px] text-neutral-400 font-mono">Stateless Services</span>
               </div>
-              <div className="p-2 rounded bg-surface-subtle border border-surface-border text-center">
-                <span className="text-text-primary block font-medium">Redis Cluster</span>
-                <span className="text-[10px] text-text-muted font-mono">Cache-Aside & Locks</span>
+              <div className="p-2 rounded bg-neutral-900/90 border border-neutral-800 text-center">
+                <span className="text-white block font-medium">Redis Cluster</span>
+                <span className="text-[10px] text-neutral-400 font-mono">Cache-Aside & Locks</span>
               </div>
             </div>
 
             <div className="flex justify-center">
-              <span className="text-text-muted text-[10px] font-mono">↓ async event propagation</span>
+              <span className="text-neutral-500 text-[10px] font-mono">↓ async event propagation</span>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
-              <div className="p-2 rounded bg-surface-subtle border border-surface-border text-center">
-                <span className="text-text-primary block font-medium">RabbitMQ / Kafka</span>
-                <span className="text-[10px] text-text-muted font-mono">Celery Async Workers</span>
+              <div className="p-2 rounded bg-neutral-900/90 border border-neutral-800 text-center">
+                <span className="text-white block font-medium">RabbitMQ / Kafka</span>
+                <span className="text-[10px] text-neutral-400 font-mono">Celery Async Workers</span>
               </div>
-              <div className="p-2 rounded bg-surface-subtle border border-surface-border text-center">
-                <span className="text-text-primary block font-medium">PostgreSQL Primary</span>
-                <span className="text-[10px] text-text-muted font-mono">ACID Transactions</span>
+              <div className="p-2 rounded bg-neutral-900/90 border border-neutral-800 text-center">
+                <span className="text-white block font-medium">PostgreSQL Primary</span>
+                <span className="text-[10px] text-neutral-400 font-mono">ACID Transactions</span>
               </div>
             </div>
           </div>
@@ -311,4 +311,3 @@ Summary : Building resilient backend services, optimizing cloud data pipelines, 
     </div>
   );
 }
-

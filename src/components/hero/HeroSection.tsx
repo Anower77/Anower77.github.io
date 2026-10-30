@@ -41,7 +41,7 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
                 {PERSONAL_INFO.title}
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.08]">
-                Building Systems That <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-neutral-200 to-accent">Scale.</span>
+                Building Systems That <span className="text-transparent bg-clip-text bg-gradient-to-r dark:from-text-primary dark:via-neutral-200 dark:to-accent from-slate-900 via-slate-700 to-blue-600">Scale.</span>
               </h1>
             </div>
 

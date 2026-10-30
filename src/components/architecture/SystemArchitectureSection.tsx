@@ -91,22 +91,22 @@ export function SystemArchitectureSection() {
               <span>Client Ingress &amp; Retry Engine</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Client Device</span>
                 <span className="text-[10px] text-text-muted">Web / Mobile / Webhook</span>
-                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface-subtle text-accent inline-block">
+                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface text-accent inline-block border border-surface-border/50">
                   Idempotency-Key
                 </div>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border flex flex-col justify-center items-center">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border flex flex-col justify-center items-center">
                 <span className="text-[10px] text-accent block font-mono">TLS 1.3 / HTTP/2</span>
                 <span className="text-text-muted text-[10px]">Bearer JWT Auth</span>
-                <span className="text-emerald-400 text-[10px] mt-0.5">Encrypted Ingress</span>
+                <span className="text-emerald-500 dark:text-emerald-400 text-[10px] mt-0.5">Encrypted Ingress</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Anycast DNS / CDN</span>
                 <span className="text-[10px] text-text-muted">DDoS Perimeter</span>
-                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface-subtle text-emerald-400 inline-block">
+                <div className="mt-1.5 text-[9px] px-1.5 py-0.5 rounded bg-surface text-emerald-600 dark:text-emerald-400 inline-block border border-surface-border/50">
                   Edge POP Routing
                 </div>
               </div>
@@ -116,25 +116,25 @@ export function SystemArchitectureSection() {
 
       case "api-gateway":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Reverse Proxy &amp; Perimeter Protection</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">TLS Termination</span>
                 <span className="text-[10px] text-text-muted">SSL Offload &lt;1ms</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Token Bucket</span>
                 <span className="text-[10px] text-text-muted">Rate Limit: 100 req/s</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">JWKS Stateless</span>
                 <span className="text-[10px] text-text-muted">Signature Verify</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Upstream Pool</span>
                 <span className="text-[10px] text-text-muted">Round-Robin Proxy</span>
               </div>
@@ -144,23 +144,23 @@ export function SystemArchitectureSection() {
 
       case "auth-service":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Asymmetric Cryptographic Auth Pipeline</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Argon2id Hash</span>
                 <span className="text-[10px] text-text-muted">Salted Credential Store</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">RS256 Private Key</span>
                 <span className="text-[10px] text-accent">Access (15m) + Refresh (7d)</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">JWKS Endpoint</span>
-                <span className="text-[10px] text-emerald-400">Public Key Distribution</span>
+                <span className="text-[10px] text-emerald-500 dark:text-emerald-400">Public Key Distribution</span>
               </div>
             </div>
           </div>
@@ -168,25 +168,25 @@ export function SystemArchitectureSection() {
 
       case "backend-services":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Stateless Service Worker &amp; Pool Topology</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">WSGI / ASGI</span>
                 <span className="text-[10px] text-text-muted">Gunicorn Worker Pool</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Django Core</span>
                 <span className="text-[10px] text-text-muted">Domain State Machine</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">PgBouncer</span>
                 <span className="text-[10px] text-text-muted">DB Pool Multiplexer</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Celery Producer</span>
                 <span className="text-[10px] text-accent">Async Task Offload</span>
               </div>
@@ -196,27 +196,27 @@ export function SystemArchitectureSection() {
 
       case "message-broker":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Event Streaming &amp; Dead-Letter Routing</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center">
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Exchange</span>
                 <span className="text-[10px] text-text-muted">Topic / Direct Binding</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Durable Queues</span>
                 <span className="text-[10px] text-text-muted">RabbitMQ / Kafka Disk</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">DLX Quarantine</span>
-                <span className="text-[10px] text-amber-400">Retry Count &gt; 3 Expire</span>
+                <span className="text-[10px] text-amber-500 dark:text-amber-400">Retry Count &gt; 3 Expire</span>
               </div>
-              <div className="p-2 rounded bg-surface border border-surface-border">
+              <div className="p-2 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Worker Consumers</span>
-                <span className="text-[10px] text-emerald-400">Celery Autoscaling</span>
+                <span className="text-[10px] text-emerald-500 dark:text-emerald-400">Celery Autoscaling</span>
               </div>
             </div>
           </div>
@@ -224,21 +224,21 @@ export function SystemArchitectureSection() {
 
       case "redis-cache":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>Cache-Aside &amp; Distributed Lock Engine</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Cache-Aside</span>
-                <span className="text-[10px] text-emerald-400">Hit SLA &lt; 0.8ms</span>
+                <span className="text-[10px] text-emerald-500 dark:text-emerald-400">Hit SLA &lt; 0.8ms</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">XFetch Stampede</span>
                 <span className="text-[10px] text-accent">Probabilistic Refresh</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Redlock Mutex</span>
                 <span className="text-[10px] text-text-muted">SET NX PX 30000ms</span>
               </div>
@@ -248,23 +248,23 @@ export function SystemArchitectureSection() {
 
       case "database":
         return (
-          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs">
+          <div className="p-4 rounded-xl bg-surface/90 dark:bg-[#0e0e13] border border-surface-border space-y-3 font-mono text-xs shadow-sm">
             <div className="flex items-center justify-between text-[11px] text-text-muted pb-2 border-b border-surface-border/60">
               <span className="text-accent font-semibold">Subsystem Visual Architecture</span>
               <span>PostgreSQL ACID Persistence &amp; WAL Streaming</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Query Planner</span>
                 <span className="text-[10px] text-text-muted">B-Tree Compound Index</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">WAL Archiver</span>
                 <span className="text-[10px] text-accent">Point-in-Time Recovery</span>
               </div>
-              <div className="p-2.5 rounded bg-surface border border-surface-border">
+              <div className="p-2.5 rounded bg-surface-subtle dark:bg-[#15151e] border border-surface-border">
                 <span className="text-text-primary block font-semibold text-xs">Read Replica</span>
-                <span className="text-[10px] text-emerald-400">Async Stream Replication</span>
+                <span className="text-[10px] text-emerald-500 dark:text-emerald-400">Async Stream Replication</span>
               </div>
             </div>
           </div>
@@ -325,8 +325,8 @@ export function SystemArchitectureSection() {
                     onClick={() => setSelectedNodeId(node.id)}
                     className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex flex-col justify-between h-32 relative group ${
                       isSelected
-                        ? "bg-[#181820] border-accent shadow-md shadow-accent/10"
-                        : "bg-surface border-surface-border hover:border-neutral-700"
+                        ? "bg-accent/10 border-accent shadow-md shadow-accent/10 dark:bg-[#181820]"
+                        : "bg-surface border-surface-border hover:border-accent/40"
                     } ${isCurrentStep ? "ring-2 ring-emerald-400 border-emerald-400" : ""}`}
                   >
                     <div>
@@ -346,7 +346,7 @@ export function SystemArchitectureSection() {
                       </div>
                       <h4
                         className={`text-xs font-semibold leading-tight ${
-                          isSelected ? "text-text-primary" : "text-text-secondary"
+                          isSelected ? "text-accent dark:text-text-primary font-bold" : "text-text-secondary"
                         }`}
                       >
                         {node.name}

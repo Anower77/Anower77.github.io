@@ -65,7 +65,7 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
           </div>
 
           {article.contentMarkdown ? (
-            <div className="prose prose-invert max-w-none text-xs sm:text-sm text-text-secondary leading-relaxed space-y-4 pt-2 font-sans whitespace-pre-line border-t border-surface-border/60">
+            <div className="prose dark:prose-invert max-w-none text-xs sm:text-sm text-text-secondary leading-relaxed space-y-4 pt-2 font-sans whitespace-pre-line border-t border-surface-border/60">
               {article.contentMarkdown}
             </div>
           ) : (

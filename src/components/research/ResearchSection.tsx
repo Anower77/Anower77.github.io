@@ -60,12 +60,12 @@ export function ResearchSection() {
         />
 
         {/* Famous Concept Spotlight: Data Transfer from Biological Brain to AI Brain */}
-        <div className="p-6 sm:p-10 rounded-2xl bg-gradient-to-b from-[#131120] to-[#0d0c14] border border-violet-500/30 relative overflow-hidden shadow-2xl space-y-8">
+        <div className="p-6 sm:p-10 rounded-2xl bg-gradient-to-b from-violet-50/70 to-surface dark:from-[#131120] dark:to-[#0d0c14] border border-violet-200 dark:border-violet-500/30 relative overflow-hidden shadow-xl space-y-8">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-violet-500/20">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-violet-200 dark:border-violet-500/20">
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2.5">
-                <Badge variant="mono" className="text-violet-400 border-violet-500/40 bg-violet-950/40 font-mono">
+                <Badge variant="mono" className="text-violet-700 dark:text-violet-400 border-violet-300 dark:border-violet-500/40 bg-violet-100/80 dark:bg-violet-950/40 font-mono">
                   <Brain className="w-3.5 h-3.5" />
                   Core Research Concept
                 </Badge>
@@ -76,14 +76,14 @@ export function ResearchSection() {
               <h3 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight">
                 {BRAIN_TO_AI_RESEARCH.title}
               </h3>
-              <p className="text-xs sm:text-sm font-mono text-violet-300 max-w-3xl">
+              <p className="text-xs sm:text-sm font-mono text-violet-700 dark:text-violet-300 max-w-3xl">
                 {BRAIN_TO_AI_RESEARCH.tagline}
               </p>
             </div>
 
-            <div className="p-3 rounded-xl bg-violet-950/30 border border-violet-500/30 text-xs font-mono text-violet-300 max-w-sm">
+            <div className="p-3 rounded-xl bg-violet-100/60 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-500/30 text-xs font-mono text-violet-900 dark:text-violet-300 max-w-sm">
               <div className="flex items-start gap-2">
-                <Info className="w-4 h-4 shrink-0 text-violet-400 mt-0.5" />
+                <Info className="w-4 h-4 shrink-0 text-violet-600 dark:text-violet-400 mt-0.5" />
                 <span>
                   Investigative architectural concept exploring biological neural assembly decoding, manifold synchronization, and transformer latent projection.
                 </span>
@@ -99,7 +99,7 @@ export function ResearchSection() {
           {/* Interactive Biological-to-AI Data Transfer Pipeline */}
           <div className="space-y-4">
             <div className="text-xs font-mono text-text-muted flex items-center justify-between">
-              <span className="uppercase tracking-wider text-violet-400 font-semibold">
+              <span className="uppercase tracking-wider text-violet-700 dark:text-violet-400 font-semibold">
                 Bi-Directional Transfer Pipeline Architecture
               </span>
               <span>Click a stage to inspect technical specifications</span>
@@ -115,12 +115,12 @@ export function ResearchSection() {
                     onClick={() => setActiveStageIdx(idx)}
                     className={`p-4 rounded-xl text-left border transition-all duration-200 flex flex-col justify-between ${
                       isActive
-                        ? "bg-[#1d1930] border-violet-500 shadow-md shadow-violet-500/10 ring-1 ring-violet-500"
-                        : "bg-surface border-surface-border hover:border-neutral-700"
+                        ? "bg-violet-100/90 border-violet-500 shadow-md shadow-violet-500/10 ring-1 ring-violet-500 dark:bg-[#1d1930] dark:border-violet-500"
+                        : "bg-surface border-surface-border hover:border-violet-300 dark:hover:border-neutral-700"
                     }`}
                   >
                     <div>
-                      <span className="font-mono text-[10px] text-violet-400 block mb-1">
+                      <span className="font-mono text-[10px] text-violet-700 dark:text-violet-400 block mb-1">
                         {stage.stage}
                       </span>
                       <h4 className="text-xs font-bold text-text-primary leading-snug">
@@ -129,7 +129,7 @@ export function ResearchSection() {
                     </div>
                     <div className="pt-2 text-[10px] font-mono text-text-muted flex items-center justify-between mt-2 border-t border-surface-border/40">
                       <span>Phase 0{idx + 1}</span>
-                      <ChevronRight className={`w-3 h-3 ${isActive ? "text-violet-400" : "text-text-muted"}`} />
+                      <ChevronRight className={`w-3 h-3 ${isActive ? "text-violet-600 dark:text-violet-400" : "text-text-muted"}`} />
                     </div>
                   </button>
                 );
@@ -137,13 +137,13 @@ export function ResearchSection() {
             </div>
 
             {/* Active Stage Detail Box */}
-            <div className="p-5 sm:p-6 rounded-xl bg-surface border border-violet-500/30 space-y-4">
+            <div className="p-5 sm:p-6 rounded-xl bg-surface border border-violet-200 dark:border-violet-500/30 space-y-4 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-surface-border">
                 <h4 className="text-base font-bold text-text-primary flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-violet-400" />
+                  <Zap className="w-4 h-4 text-violet-600 dark:text-violet-400" />
                   {activeStage.name}
                 </h4>
-                <span className="text-xs font-mono text-violet-400">
+                <span className="text-xs font-mono text-violet-700 dark:text-violet-400">
                   {activeStage.stage}
                 </span>
               </div>
@@ -160,7 +160,7 @@ export function ResearchSection() {
                   {activeStage.specs.map((spec) => (
                     <span
                       key={spec}
-                      className="px-2.5 py-1 rounded bg-[#161424] border border-violet-500/40 text-xs font-mono text-violet-300"
+                      className="px-2.5 py-1 rounded bg-surface border border-violet-200 dark:bg-[#161424] dark:border-violet-500/40 text-xs font-mono text-violet-800 dark:text-violet-300"
                     >
                       {spec}
                     </span>
@@ -237,7 +237,7 @@ export function ResearchSection() {
                   <div className="p-3 rounded-lg bg-surface border border-surface-border group-hover:border-violet-500/30 transition-colors w-fit mb-4">
                     {getTopicIcon(interest.icon)}
                   </div>
-                  <h4 className="text-base font-semibold text-text-primary group-hover:text-violet-300 transition-colors">
+                  <h4 className="text-base font-semibold text-text-primary group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
                     {interest.title}
                   </h4>
                   <p className="mt-2 text-xs text-text-secondary leading-relaxed">
@@ -247,7 +247,7 @@ export function ResearchSection() {
 
                 <div className="mt-4 pt-3 border-t border-surface-border/40 text-[10px] font-mono text-text-muted flex items-center justify-between">
                   <span>Research Track 0{idx + 1}</span>
-                  <span className="text-violet-400 group-hover:translate-x-1 transition-transform">
+                  <span className="text-violet-600 dark:text-violet-400 group-hover:translate-x-1 transition-transform">
                     →
                   </span>
                 </div>
