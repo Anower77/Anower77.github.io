@@ -6,25 +6,25 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
 
 ---
 
-## 🚀 Live Demo & Deployment
+## Live Demo & Deployment
 
-- **GitHub Repository:** [https://github.com/Anower77/portfolio](https://github.com/Anower77/portfolio)
-- **Live Deployment:** [https://anower-hossen.github.io/](https://anower-hossen.github.io/) (or [https://anower77.github.io/portfolio/](https://anower77.github.io/portfolio/))
+- **Live Deployment:** [https://anower77.github.io/](https://anower77.github.io/)
+- **GitHub Repository:** [https://github.com/Anower77/Anower77.github.io](https://github.com/Anower77/Anower77.github.io)
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## Tech Stack & Architecture
 
 - **Core Framework:** Next.js 14 (App Router, Static HTML Export)
 - **Language:** TypeScript 5.7 (Strict Type Checking)
-- **Styling & Design System:** Tailwind CSS with custom Linear/Vercel dark theme palette
+- **Styling & Design System:** Tailwind CSS with custom dark theme palette
 - **Icons:** Lucide React
-- **Animations & Interactivity:** Framer Motion & CSS hardware-accelerated transitions
-- **Deployment Target:** GitHub Pages / Vercel / Cloudflare Pages
+- **Animations & Interactivity:** Framer Motion and hardware-accelerated CSS transitions
+- **Deployment Target:** GitHub Pages (User Site)
 
 ---
 
-## 📐 Key Sections & Features
+## Key Sections & Architecture
 
 1. **Navigation Bar:** Sticky, responsive navigation with quick links to GitHub, LinkedIn, and dynamic Resume viewer.
 2. **Hero Section:**
@@ -37,14 +37,14 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
    - Categorized into 8 domains: Programming, Backend, Database, Messaging & Caching, Cloud, DevOps, Architecture, and CS Fundamentals.
    - Zero fabricated percentage meters; strictly verified capabilities.
 5. **Special Feature ("How I Think About Systems"):**
-   - Visual interactive architectural pipeline: `Client` → `API Gateway` → `Backend Services` → `Message Broker` → `Database / Cache`.
+   - Visual interactive architectural pipeline: Client -> API Gateway -> Backend Services -> Message Broker -> Database / Cache.
    - Clickable deep dives into failure modes, mitigations, and typical SLAs for each component.
    - One-click *Simulate Request Trace* animating a request packet through each hop.
 6. **Experience Timeline:**
    - Backend Developer @ SFV Omega
    - CS Instructor @ EduCity Ed-tech Platform
 7. **Featured Projects:**
-   - **CP Platform:** Competitive programming engine in Django 5.2 & PostgreSQL.
+   - **CP Platform:** Competitive programming engine in Django 5.2 and PostgreSQL.
    - **Microservices Lab:** Multi-service decoupled architecture with Docker, RabbitMQ, Kafka, and GitHub Actions.
    - **DootGo (Loijan):** Traveler-to-sender delivery marketplace with role state machines.
    - **Lunchbari:** Enterprise catering and dispatch management backend.
@@ -70,12 +70,12 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
 
 ---
 
-## 💻 Local Development
+## Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/Anower77/portfolio.git
-cd portfolio
+git clone https://github.com/Anower77/Anower77.github.io.git
+cd Anower77.github.io
 
 # Install dependencies
 npm install
@@ -88,17 +88,16 @@ Visit `http://localhost:3000` in your browser.
 
 ---
 
-## 🏗️ Building for Production & Static Export
+## Building for Production & Static Export
 
 ```bash
 npm run build
 ```
 
-This compiles and exports static HTML/CSS/JS files to the `out/` directory, ready to deploy to any static host (GitHub Pages, Vercel, Netlify, Cloudflare Pages, AWS S3/CloudFront).
+This compiles and exports static HTML/CSS/JS files to the `out/` directory, ready to deploy to GitHub Pages.
 
 ---
 
-## 🚢 GitHub Pages Automated Deployment
+## GitHub Pages Automated Deployment
 
 This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and publishes the portfolio to GitHub Pages whenever changes are pushed to `main`.
-
