@@ -210,3 +210,4 @@ export function Navbar({ onOpenResume }: NavbarProps) {
     </header>
   );
 }
+

@@ -9,7 +9,7 @@ Engineered to reflect backend fundamentals, practical systems experience, distri
 ## 🚀 Live Demo & Deployment
 
 - **GitHub Repository:** [https://github.com/Anower77/portfolio](https://github.com/Anower77/portfolio)
-- **Live Deployment:** [https://anower77.github.io/portfolio/](https://anower77.github.io/portfolio/)
+- **Live Deployment:** [https://anower-hossen.github.io/](https://anower-hossen.github.io/) (or [https://anower77.github.io/portfolio/](https://anower77.github.io/portfolio/))
 
 ---
 
@@ -101,3 +101,4 @@ This compiles and exports static HTML/CSS/JS files to the `out/` directory, read
 ## 🚢 GitHub Pages Automated Deployment
 
 This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and publishes the portfolio to GitHub Pages whenever changes are pushed to `main`.
+

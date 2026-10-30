@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Anower Hossain", url: "https://github.com/Anower77" }],
   creator: "Anower Hossain",
-  metadataBase: new URL("https://anower77.github.io/portfolio"),
+  metadataBase: new URL("https://anower-hossen.github.io"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://anower77.github.io/portfolio",
+    url: "https://anower-hossen.github.io",
     title: "Anower Hossain | Backend Developer | Python & Distributed Systems",
     description:
       "Explore the portfolio of Anower Hossain, a Backend Developer focused on Python, Django, backend architecture, distributed systems, cloud infrastructure, and AI research.",
@@ -59,3 +59,4 @@ export default function RootLayout({
     </html>
   );
 }
+

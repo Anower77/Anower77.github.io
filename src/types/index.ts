@@ -74,3 +74,4 @@ export interface SystemArchitectureNode {
   mitigations: string[];
   latencyTypical: string;
 }
+

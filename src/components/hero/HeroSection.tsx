@@ -140,3 +140,4 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
     </section>
   );
 }
+

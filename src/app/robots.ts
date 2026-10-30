@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://anower77.github.io/portfolio/sitemap.xml",
+    sitemap: "https://anower-hossen.github.io/sitemap.xml",
   };
 }
+

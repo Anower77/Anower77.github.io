@@ -106,3 +106,4 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
     </div>
   );
 }
+

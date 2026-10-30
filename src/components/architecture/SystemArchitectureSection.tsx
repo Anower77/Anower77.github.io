@@ -315,3 +315,4 @@ export function SystemArchitectureSection() {
     </section>
   );
 }
+

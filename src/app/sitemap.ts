@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://anower77.github.io/portfolio";
+  const baseUrl = "https://anower-hossen.github.io";
   return [
     {
       url: baseUrl,
@@ -11,3 +11,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
+
