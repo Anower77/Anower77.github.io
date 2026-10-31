@@ -101,7 +101,7 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
             </div>
 
             {/* External Links */}
-            <div className="flex items-center gap-6 pt-2 text-xs font-mono text-text-muted">
+            <div className="flex flex-wrap items-center gap-5 pt-2 text-xs font-mono text-text-muted">
               <a
                 href={PERSONAL_INFO.links.github}
                 target="_blank"
@@ -120,6 +120,16 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
               >
                 <Linkedin className="w-4 h-4 text-accent" />
                 <span>linkedin/in/anowerhossain</span>
+              </a>
+
+              <a
+                href={PERSONAL_INFO.links.linktree}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-text-primary transition-colors"
+              >
+                <span className="w-2 h-2 rounded-full bg-accent" />
+                <span>linktr.ee/anower77</span>
               </a>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Terminal, Github, Linkedin, ArrowUp } from "lucide-react";
+import { Terminal, Github, Linkedin, ArrowUp, ExternalLink } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
 export function Footer() {
@@ -63,6 +63,16 @@ export function Footer() {
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4 text-accent" />
+            </a>
+
+            <a
+              href={PERSONAL_INFO.links.linktree}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg bg-surface border border-surface-border hover:border-neutral-600 text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="Linktree Profile"
+            >
+              <ExternalLink className="w-4 h-4 text-emerald-500" />
             </a>
 
             <button

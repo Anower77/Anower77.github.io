@@ -81,14 +81,14 @@ export function Navbar({ onOpenResume }: NavbarProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-surface/80 backdrop-blur-md p-1.5 rounded-full border border-surface-border shadow-sm">
+          <nav className="hidden lg:flex items-center gap-0.5 bg-surface/80 backdrop-blur-md p-1 rounded-full border border-surface-border shadow-sm">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 ${
+                  className={`px-2.5 xl:px-3 py-1 rounded-full text-[11px] xl:text-xs font-medium transition-all duration-150 ${
                     isActive
                       ? "bg-surface-subtle text-text-primary shadow-sm border border-surface-border"
                       : "text-text-secondary hover:text-text-primary hover:bg-surface-subtle/50"
