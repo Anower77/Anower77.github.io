@@ -11,8 +11,7 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Terminal,
-  CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 
 export function AboutSection() {
@@ -54,90 +53,89 @@ export function AboutSection() {
           description="Understanding system internals, performance characteristics, and building reliable primitives for modern applications."
         />
 
-        {/* Narrative & Full Portrait Grid */}
+        {/* Balanced Two-Column Grid: Editorial Narrative (Left) & Architectural Tenets (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-8">
-          {/* Left Column: Full Original Portrait & Identity Card */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-start space-y-4">
-            <div className="p-3 rounded-2xl bg-surface border border-surface-border shadow-sm">
+          {/* Left Column: Portrait & Narrative (6 cols) */}
+          <div className="lg:col-span-6 space-y-6">
+            {/* Integrated Portrait Card */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 p-5 rounded-2xl bg-surface border border-surface-border shadow-sm">
               <img
                 src={`${basePath}/anower.png`}
                 alt="Anower Hossain - Backend Engineer"
-                className="w-48 h-48 sm:w-56 sm:h-56 rounded-xl object-cover shadow-sm border border-surface-border/60"
+                className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0 border border-surface-border/80 shadow-sm"
               />
+              <div className="space-y-1.5 text-center sm:text-left flex-1 min-w-0">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <h3 className="text-xl font-bold text-text-primary tracking-tight">
+                    {PERSONAL_INFO.name}
+                  </h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                    Available
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-accent font-medium">
+                  {PERSONAL_INFO.title}
+                </p>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs font-mono text-text-muted pt-0.5">
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-accent" />
+                    <span>{PERSONAL_INFO.location}</span>
+                  </span>
+                  <span>•</span>
+                  <a
+                    href={PERSONAL_INFO.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-text-primary transition-colors flex items-center gap-1"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    <span>GitHub</span>
+                  </a>
+                  <span>•</span>
+                  <a
+                    href={PERSONAL_INFO.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-text-primary transition-colors flex items-center gap-1"
+                  >
+                    <Linkedin className="w-3.5 h-3.5 text-accent" />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+                <p className="text-xs text-text-secondary leading-relaxed pt-1 font-normal">
+                  {PERSONAL_INFO.shortBio}
+                </p>
+              </div>
             </div>
 
-            <div className="text-center lg:text-left space-y-1">
-              <h3 className="text-xl font-bold text-text-primary tracking-tight">
-                {PERSONAL_INFO.name}
-              </h3>
-              <p className="text-xs font-mono text-accent font-medium">
-                {PERSONAL_INFO.title}
-              </p>
-              <p className="text-xs font-mono text-text-muted flex items-center justify-center lg:justify-start gap-1.5 pt-0.5">
-                <MapPin className="w-3.5 h-3.5 text-accent" />
-                <span>{PERSONAL_INFO.location}</span>
-              </p>
-            </div>
-
-            {/* Quick Profile Links */}
-            <div className="flex items-center gap-2 pt-1">
-              <a
-                href={PERSONAL_INFO.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-surface border border-surface-border text-text-secondary hover:text-text-primary hover:border-accent transition-colors"
-                aria-label="GitHub Profile"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href={PERSONAL_INFO.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-surface border border-surface-border text-text-secondary hover:text-text-primary hover:border-accent transition-colors"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="w-4 h-4 text-accent" />
-              </a>
-              <a
-                href={PERSONAL_INFO.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-surface border border-surface-border text-text-primary hover:border-accent text-xs font-mono flex items-center gap-1.5 transition-colors"
-              >
-                <Terminal className="w-3.5 h-3.5 text-accent" />
-                <span>Repositories</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Editorial Narrative & Principles */}
-          <div className="lg:col-span-8 space-y-6 text-text-secondary leading-relaxed text-base">
-            <div className="p-6 rounded-2xl bg-surface border border-surface-border relative overflow-hidden shadow-sm">
+            {/* Positioning Quote */}
+            <div className="p-5 rounded-xl bg-surface border border-surface-border relative overflow-hidden shadow-sm">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-accent" />
-              <p className="text-text-primary text-base sm:text-lg font-medium leading-relaxed italic pl-2">
+              <p className="text-text-primary text-base font-medium leading-relaxed italic pl-2">
                 &ldquo;{PERSONAL_INFO.positioning}&rdquo;
               </p>
             </div>
 
-            <div className="space-y-4 text-sm sm:text-base text-text-secondary leading-relaxed">
+            {/* Editorial Bio Paragraphs */}
+            <div className="space-y-3.5 text-sm text-text-secondary leading-relaxed">
               {PERSONAL_INFO.aboutText.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>
 
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
-              <div className="p-4 rounded-xl bg-surface border border-surface-border shadow-sm">
-                <span className="text-text-muted uppercase block font-semibold text-[10px]">
-                  Core Engineering Mindset
+            {/* Mindset & Research Callout Cards */}
+            <div className="pt-1 flex flex-col sm:flex-row gap-3 text-xs font-mono">
+              <div className="p-4 rounded-xl bg-surface border border-surface-border flex-1 shadow-sm">
+                <span className="text-text-muted uppercase block text-[10px] font-semibold">
+                  Core Mindset
                 </span>
                 <span className="text-text-primary font-medium mt-1 block">
                   Deterministic Backends &gt; Fragile Workarounds
                 </span>
               </div>
-              <div className="p-4 rounded-xl bg-surface border border-surface-border shadow-sm">
-                <span className="text-accent uppercase block font-semibold text-[10px]">
-                  Pioneering Research Focus
+              <div className="p-4 rounded-xl bg-surface border border-surface-border flex-1 shadow-sm">
+                <span className="text-accent uppercase block text-[10px] font-semibold">
+                  Research Frontier
                 </span>
                 <span className="text-text-primary font-medium mt-1 block">
                   Biological Brain to AI Data Transfer
@@ -145,43 +143,45 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Core Architectural Tenets Grid */}
-        <div className="mt-16 pt-12 border-t border-surface-border/60">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-text-muted font-semibold">
-              Core Architectural Tenets
-            </h3>
-            <span className="text-xs font-mono text-text-muted hidden sm:inline">
-              Guiding principles behind every production system
-            </span>
-          </div>
+          {/* Right Column: 4 Core Architectural Tenets (6 cols) */}
+          <div className="lg:col-span-6 space-y-4">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-mono text-xs uppercase tracking-wider text-text-muted font-semibold">
+                Core Architectural Tenets
+              </h3>
+              <span className="text-[11px] font-mono text-text-muted">
+                System Principles
+              </span>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {engineeringPrinciples.map((principle, index) => (
-              <div
-                key={index}
-                className="p-5 rounded-2xl bg-surface border border-surface-border hover:border-accent/40 transition-all duration-200 group flex flex-col justify-between shadow-sm"
-              >
-                <div>
-                  <div className="p-2.5 rounded-xl bg-surface-subtle border border-surface-border shrink-0 group-hover:border-accent/40 transition-colors w-fit mb-3">
-                    {principle.icon}
+            <div className="grid grid-cols-1 gap-4">
+              {engineeringPrinciples.map((principle, index) => (
+                <div
+                  key={index}
+                  className="p-5 rounded-2xl bg-surface border border-surface-border hover:border-accent/40 transition-all duration-200 group shadow-sm"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-surface-subtle border border-surface-border shrink-0 group-hover:border-accent/40 transition-colors">
+                      {principle.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">
+                          {principle.title}
+                        </h4>
+                        <span className="text-[10px] font-mono text-text-muted">
+                          Tenet 0{index + 1}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-xs text-text-secondary leading-relaxed">
+                        {principle.description}
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="text-sm font-semibold text-text-primary group-hover:text-accent transition-colors">
-                    {principle.title}
-                  </h4>
-                  <p className="mt-2 text-xs text-text-secondary leading-relaxed">
-                    {principle.description}
-                  </p>
                 </div>
-
-                <div className="mt-4 pt-3 border-t border-surface-border/40 text-[10px] font-mono text-text-muted flex items-center justify-between">
-                  <span>Tenet 0{index + 1}</span>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

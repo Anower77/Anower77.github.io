@@ -79,7 +79,7 @@ export function ContactSection() {
             </div>
 
             {/* Professional Networks */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
                 href={PERSONAL_INFO.links.linkedin}
                 target="_blank"
@@ -94,8 +94,8 @@ export function ContactSection() {
                     <span className="text-xs font-semibold text-text-primary block">
                       LinkedIn
                     </span>
-                    <span className="text-[11px] text-text-muted font-mono block">
-                      Connect &amp; Message
+                    <span className="text-[10px] text-text-muted font-mono block">
+                      Connect
                     </span>
                   </div>
                 </div>
@@ -116,8 +116,30 @@ export function ContactSection() {
                     <span className="text-xs font-semibold text-text-primary block">
                       GitHub
                     </span>
-                    <span className="text-[11px] text-text-muted font-mono block">
-                      Code Repositories
+                    <span className="text-[10px] text-text-muted font-mono block">
+                      Repositories
+                    </span>
+                  </div>
+                </div>
+                <ExternalLink className="w-3.5 h-3.5 text-text-muted group-hover:text-text-primary" />
+              </a>
+
+              <a
+                href={PERSONAL_INFO.links.linktree}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-surface-subtle border border-surface-border hover:border-neutral-600 transition-all flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-surface text-emerald-500">
+                    <ExternalLink className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-semibold text-text-primary block">
+                      Linktree
+                    </span>
+                    <span className="text-[10px] text-text-muted font-mono block">
+                      Bio Links
                     </span>
                   </div>
                 </div>
